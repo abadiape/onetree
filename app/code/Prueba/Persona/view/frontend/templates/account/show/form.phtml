@@ -1,0 +1,18 @@
+<?php 
+/**
+ * Copyright © Onetree, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Prueba\Persona\Block\Account\Show\Form $block */
+?>
+<h1>Persona Form</h1>
+
+<form action="<?php echo $block->getFormAction() ?>" method="post">
+    <input name="nombre" type="text">
+    <input name="edad" type="text">
+    <input name="sexo" type="text">
+    <input type="submit" value="Save info">
+</form>

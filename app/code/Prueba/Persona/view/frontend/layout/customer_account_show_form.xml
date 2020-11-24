@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Onetree, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Formulario Persona</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Prueba_Persona\Block\Account\Show\Form" name="persona.form" template="Prueba_Persona::account/show/form.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
