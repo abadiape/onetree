@@ -4,7 +4,7 @@
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the mageplaza.com license that is
+ * This source file is subject to the onetree.com license that is
  * available through the world-wide-web at this URL:
  * https://www.onetree.com/LICENSE.txt
  *
@@ -18,26 +18,38 @@
  * 
  */
 
-namespace Prueba\Persona\Controller\Account\Show;
+namespace Prueba\Persona\Controller\Show;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\ResultInterface;
 
 /**
  * Class Form
- * @package Prueba\Persona\Controller\Account\Show
+ * @package Prueba\Persona\Controller\Show
  */
 class Form extends Action
 {
+    /** @var \Magento\Framework\View\Result\PageFactory  */
+    protected $_pageFactory;
+
+    public function __construct(
+      Context $context,
+      PageFactory $pageFactory
+    )
+    {
+	$this->_pageFactory = $pageFactory;
+	parent::__construct($context);
+    }
 
     /**
-     * @return ResponseInterface|ResultInterface|void
+     * @return \Magento\Framework\View\Result\Page
      */
     public function execute()
     {        
-        $this->_view->loadLayout();
-        $this->_view->renderLayout();
+
+	return $this->_pageFactory->create();	
     }
 }

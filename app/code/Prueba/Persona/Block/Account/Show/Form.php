@@ -5,7 +5,7 @@
  */
 namespace Prueba\Persona\Block\Account\Show;
 
-use Magento\Framework\Exception\NoSuchEntityException;
+use Magento\Store\Model\StoreManagerInterface;
 
 /**
  * Persona Form Block
@@ -13,18 +13,26 @@ use Magento\Framework\Exception\NoSuchEntityException;
 class Form extends \Magento\Framework\View\Element\Template
 {
     /**
+     * @var \Magento\Store\Model\StoreManagerInterface $_storeManager
+    */
+    protected $_storeManager;
+	
+     /**
      * Construct
      *
      * @param \Magento\Framework\View\Element\Template\Context $context
      * @param array $data
      */
     public function __construct(
-        \Magento\Framework\View\Element\Template $context,
+	StoreManagerInterface $storeManager,
+        \Magento\Framework\View\Element\Template\Context $context,
         array $data = []
     )
     {
         parent::__construct($context, $data);
-       }
+
+	$this->_storeManager = $storeManager;
+    }
 
     /**
      * Get form action URL for POST form request
@@ -33,11 +41,8 @@ class Form extends \Magento\Framework\View\Element\Template
      */
     public function getFormAction()
     {
-            // companymodule is given in routes.xml
-            // controller_name is folder name inside controller folder
-            // action is php file name inside above controller_name folder
-
-        return '/account/show/form';
-        // here controller_name is index, action is booking
+	$baseURL = $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_WEB);
+        
+	return $baseURL . 'persona/save/form';
     }
 }

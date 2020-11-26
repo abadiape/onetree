@@ -4,15 +4,14 @@
  * See COPYING.txt for license details.
  */
 
-// @codingStandardsIgnoreFile
-
 /** @var \Prueba\Persona\Block\Account\Show\Form $block */
 ?>
-<h1>Persona Form</h1>
-
 <form action="<?php echo $block->getFormAction() ?>" method="post">
-    <input name="nombre" type="text">
-    <input name="edad" type="text">
-    <input name="sexo" type="text">
-    <input type="submit" value="Save info">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" maxlength="64" size="64">
+    <label for="edad">Edad</label>
+    <input type="text" id="edad" name="edad"  maxlenght="5" size="5">
+    <label for="sexo">Sexo</label>
+    <input type="text" id="sexo" name="sexo" maxlenght="5" size="5"><br/>
+    <input type="submit" value="Save info"/>
 </form>

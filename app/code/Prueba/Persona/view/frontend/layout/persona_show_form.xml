@@ -11,7 +11,7 @@
     </head>
     <body>
         <referenceContainer name="content">
-            <block class="Prueba_Persona\Block\Account\Show\Form" name="persona.form" template="Prueba_Persona::account/show/form.phtml"/>
+            <block class="Prueba\Persona\Block\Account\Show\Form" name="persona.form" template="Prueba_Persona::account/show/form.phtml"/>
         </referenceContainer>
     </body>
 </page>
