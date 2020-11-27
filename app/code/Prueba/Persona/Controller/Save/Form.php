@@ -27,7 +27,7 @@ use Prueba\Persona\Model\Account\Form as PersonaModel;
 
 /**
  * Class Form
- * @package Prueba\Persona\Controller\Account\Save
+ * @package Prueba\Persona\Controller\Save
  */
 class Form extends Action
 {    
