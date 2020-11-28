@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="onetree" translate="label" sortOrder="250">
+            <label>Onetree</label>
+        </tab>
+        <section id="publicidad" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Publicidad</label>
+            <tab>onetree</tab>
+            <resource>Publicidad_Catalog::config</resource>
+            <group id="setup" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Setup</label>
+                <attribute type="expanded">1</attribute>
+                <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mostrar información</label>
+                    <config_path>publicidad/configuration/active</config_path>
+                    <comment><![CDATA[To show offer information, enter it in the field below and save your configuration.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="information" translate="label comment" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Información de oferta</label>
+		    <config_path>publicidad/configuration/information</config_path>					
+                    <comment>Enter here the corresponding offer information.</comment>
+                </field>
+            </group>            
+        </section>
+    </system>
+</config>
