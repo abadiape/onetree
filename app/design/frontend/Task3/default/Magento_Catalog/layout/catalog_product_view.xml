@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Onetree, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body> 
+	<referenceBlock name="page.main.title"> 
+	    <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.delivery" template="Magento_Catalog::product/view/delivery_options.phtml">
+		<arguments>
+                        <argument name="at_call" xsi:type="string">getDeliveryTime</argument>
+                        <argument name="at_code" xsi:type="string">delivery_time</argument>
+                        <argument name="css_class" xsi:type="string">delivery-time</argument>
+                        <argument name="at_label" xsi:type="string">Delivery time</argument>
+                        <argument name="title" translate="true" xsi:type="string">Delivery time</argument>
+                        <argument name="add_attribute" xsi:type="string">itemprop="delivery_time"</argument>
+           	</arguments>
+       	    </block>  
+	</referenceBlock> 
+	<referenceBlock name="product.info.addtocart">                             
+       	    <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.comment" template="Magento_Catalog::product/view/particular_comment.phtml">
+           	<arguments>
+                        <argument name="at_call" xsi:type="string">getParticularComment</argument>
+                        <argument name="at_code" xsi:type="string">particular_comment</argument>
+                        <argument name="css_class" xsi:type="string">particular-comment</argument>
+                        <argument name="at_label" xsi:type="string">Comment</argument>
+                        <argument name="title" translate="true" xsi:type="string">Comment</argument>
+                        <argument name="add_attribute" xsi:type="string">itemprop="particular_comment"</argument>
+           	</arguments>
+       	    </block>  
+	</referenceBlock>     
+    </body>
+</page>
